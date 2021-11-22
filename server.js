@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 	//res.send('This should be the root route!')
 
 	//sending some HTML
-	res.sendFile(__dirname + '/public/table_library.html');
+	res.sendFile(__dirname + '/public/tableViews.html');
 })
 
 // Error codes
@@ -38,16 +38,6 @@ app.get('/problem', (req, res) => {
 
 	// don't send nonsense status codes like this one:
 	//res.status(867).send('There was a problem on the server')
-})
-
-// Sending some JSON
-app.get('/someJSON', (req, res) => {
-	// object converted to JSON string
-	res.send({
-		name: 'John',
-		year: 3,
-		courses: ['csc309', 'csc301']
-	})
 })
 
 // will use an 'environmental variable', process.env.PORT, for deployment.
