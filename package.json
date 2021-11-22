@@ -1,0 +1,23 @@
+{
+  "name": "js-library-tiechu",
+  "version": "1.0.0",
+  "description": "alpha release",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csc309-fall-2021/js-library-tiechu.git"
+  },
+  "author": "Jiessiet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csc309-fall-2021/js-library-tiechu/issues"
+  },
+  "homepage": "https://github.com/csc309-fall-2021/js-library-tiechu#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
