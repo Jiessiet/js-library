@@ -6,7 +6,6 @@ body {
 	box-sizing: border-box;
   }
   
-  /* Assign grid instructions to our parent grid container, mobile-first (hide the sidenav) */
   .grid-container {
 	display: grid;
 	grid-template-rows: 50px 1fr 50px;
@@ -15,7 +14,7 @@ body {
 	  'main'
 	  'footer';
 	height: 200vh;
-	width: 100vh;
+	width: 100vw;
   }
   
   .menu-icon {
@@ -69,8 +68,9 @@ body {
   .main {
 	grid-area: main;
 	background-color: #ddbea9;
-	width: auto;
-	height: auto;
+	display: flex;
+	/* width: auto;
+	height: auto; */
   }
     .footer {
 	grid-area: footer;
@@ -80,21 +80,13 @@ body {
 	padding: 0 16px;
 	background-color: #cb997e;
   }
-  
-  @media only screen and (min-width: 46.875em) {
-	.grid-container {
+  .grid-container {
 	  grid-template-columns: 240px 1fr;
 	  grid-template-areas:
 		"sidenav header"
 		"sidenav main"
 		"sidenav footer";
 	}
-  
-	.sidenav {
-	  position: relative;
-	  transform: translateX(0);
-	}
-  }
 
  button {
 	border: none;
