@@ -15,6 +15,7 @@ body {
 	  'main'
 	  'footer';
 	height: 200vh;
+	width: 100vh;
   }
   
   .menu-icon {
