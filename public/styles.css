@@ -13,8 +13,10 @@ body {
 	  'header'
 	  'main'
 	  'footer';
-	height: 1600px;
-	width: 1400px;
+	min-height: 1600px;
+	height: 100vh;
+	min-width: 1400px;
+	width: 100%;
   }
   
   .menu-icon {
