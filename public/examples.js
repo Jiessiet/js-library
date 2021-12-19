@@ -45,7 +45,7 @@ function examples() {
     tables.changeRowColor('#828E84', 0, 0)
     
 
-    cells.makeHeaderCell('300px', '90px', '3200px', '700px', 'Select your favourite games on the left and leave a rating for each!')
+    cells.makeHeaderCell('300px', '90px', '3200px', '700px', 'Select your favourite games on the left and click on the hearts to leave a rating for each!')
     tables.makeTable(3, 1, '3315px', '270px', false, 's', games)
     tables.addColumn(1, 1, 'h', games)
     tables.addTableHeader(1, header1)
