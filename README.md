@@ -14,14 +14,12 @@ Getting Started
             contained within the allocated space. 
             Each cell within the table is customizable in its color, inner text and type (text, input, quiz, rating, selection). 
             Developers only need to specify the row, column, table and change for the cell to be edited. 
-           
-            To get started, call the scripts below in your code;            
+            <br></br>
+            To get started, call the scripts below in your code;    
+            
                 <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                 <script defer type="text/javascript" src='tableViews.js'> </script>
                 <script defer type="text/javascript" src='your-js-file.js'> </script>
-<h2>
-Code Snippet
-</h2>
 <p>
             A code snippet of a basic cell and table are shown below;
 </p>
@@ -47,6 +45,7 @@ Links
 </h2>
 <p>
 See the Link below for a in-depth explaination of the library and customizations avaliable.
+            <br></br>
 Landing Page Link: https://blooming-inlet-02629.herokuapp.com
         <br></br>
 Documentation Link: https://blooming-inlet-02629.herokuapp.com/documentation.html
