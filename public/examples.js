@@ -1,30 +1,56 @@
-// "use strict";
+"use strict";
+const cells = new TableCellGenerator()
+const tables = new TableGenerator()
+function examples() {
+    
+    const array = ["Products", "Review"];
 
-const cell0paragraph = new TableCellGenerator()
-cell0paragraph.makeHeaderCell('400px', '600px', '100px', '300px', 'Read the following passage and answer the quiz on the right. <br> <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit minus impedit maxime, quae soluta quis cumque perferendis! Doloribus quaerat, placeat iste facere, aspernatur ex cum veritatis laudantium, officia, non porro exercitationem incidunt quis dolore? Officia ex accusamus expedita optio, voluptatem minus? In maiores omnis aperiam earum ab molestiae beatae laborum blanditiis incidunt, delectus dolor, id voluptates optio aspernatur aliquam saepe atque labore? Tempore reprehenderit ab ipsam perspiciatis ut, provident perferendis sapiente in numquam blanditiis, enim, illo error nulla incidunt quos quidem ratione repellat ipsa molestias veritatis? Mollitia, fugit dolore commodi porro repudiandae atque, eos, ipsum quam culpa fuga deleniti quae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit minus impedit maxime, quae soluta quis cumque perferendis! Doloribus quaerat, placeat iste facere, aspernatur ex cum veritatis laudantium, officia, non porro exercitationem incidunt quis dolore? Officia ex accusamus expedita optio, voluptatem minus? In maiores omnis aperiam earum ab molestiae beatae laborum blanditiis incidunt, delectus dolor, id voluptates optio aspernatur aliquam saepe atque labore? Tempore reprehenderit ab ipsam perspiciatis ut, ')
-cell0paragraph.changeCellsColor('#6b705c', 0)
-cell0paragraph.makeHeaderCell('300px', '70px', '100px', '850px', "Click the true answer")
-cell0paragraph.changeCellsColor('#6b705c', 1)
+    const products = [['Four Leaf Clover Necklace', 'Pufferfish Necklace'], 
+    ['Four Leaf Clover Earring', 'Pufferfish Earring'], 
+    ['Four Leaf Clover Braclet', 'Pufferfish Bracelet']]
 
-const cell1quiz = new TableCellGenerator()
-cell1quiz.makeQuizCells('240px', '120px', '150px', '750px','Quiz Option false', false)
-cell1quiz.makeQuizCells('240px', '120px', '350px', '750px','Quiz Option false', false)
-cell1quiz.makeQuizCells('240px', '120px', '150px', '1040px','Quiz Option true', true)
-cell1quiz.makeQuizCells('240px', '120px', '350px', '1040px','Quiz Option false', false)
+    const games = 
+    [[['Mario Party', 'Mario Kart', 'Super Mario']],
+    [['Minecraft', 'Stardew Valley', 'Animal Crossing']],
+    [['Red Dead Redemption', 'GTA V', 'Apex Legends']],]
 
-const cellForm = new TableCellGenerator()
-cellForm.makeHeaderCell('200px', '60px', '600px', '750px', 'What did you think?')
-cellForm.addUserInput('200px', '100px', '600px', '1040px')
-cellForm.changeCellsColor('#6b705c', 0)
+    const header1 = ["Games", "Rating"];
 
-const cellheader = new TableCellGenerator()
-cellheader.makeHeaderCell('700px', '50px', '800px', '450px', 'Table Title')
-cellheader.changeCellsColor('#6b705c', 0)
+    cells.makeHeaderCell('300px', '80px', '1000px', '790px', 'Which Number is Even? Click on the answer!')
+    cells.makeQuizCells('300px', '80px', '1050px', '400px', 'The number 212 is even', true, false)
+    cells.makeQuizCells('300px', '80px', '1050px', '800px', 'The number 493 is even', false, false)
+    cells.makeQuizCells('300px', '80px', '1050px', '1200px', 'The number 105', false, false)
 
-const table0 = new TableGenerator()
-table0.makeTable(9, 3, '600px', '1000px', '900px', '300px')
-table0.changeTableColor('pink', 0)
-table0.changeColumnColor('lightgrey', 0, 2)
-table0.changeColumnColor('lightgreen', 0, 1)
-table0.changeRowColor('grey', 0, 0)
-table0.changeTableCellColor('lightblue', 0, 8, 2)
+    cells.makeHeaderCell('300px', '90px', '1460px', '800px', 'Compare shapes to: ▭! Hint: Try moving the cells closer to compare.')
+    cells.makeCell('60px', '60px', '1550px', '400px', "▱", true)
+    cells.makeCell('60px', '60px', '1550px', '800px', "▢",true)
+    cells.makeCell('60px', '60px', '1550px', '600px', "▯",true)
+    cells.makeCell('60px', '60px', '1550px', '1400px', "▮", true)
+    cells.makeCell('60px', '60px', '1550px', '1000px', "▬",true)
+    cells.makeCell('60px', '60px', '1550px', '1200px', "▭",true)
+
+    cells.changeCellsColor('pink', 5)
+    cells.changeCellsColor('pink', 6)
+    cells.changeCellsColor('pink', 7)
+    cells.changeCellsColor('pink', 8)
+    cells.changeCellsColor('pink', 9)
+    cells.changeCellsColor('lightgreen', 10)
+
+    tables.setSizeTheme('1200', '300', false)
+    tables.makeTable(3, 2, '2315px', '270px', true, 't', products)
+    tables.addColumn(0, 2, 'i', array)
+    tables.removeTableColumn(0, 1)
+    tables.changeColumnColor('#68b374', 0, 0)
+    tables.addTableHeader(0, array)
+    tables.changeRowColor('#828E84', 0, 0)
+    
+
+    cells.makeHeaderCell('300px', '90px', '3200px', '700px', 'Select your favourite games on the left and leave a rating for each!')
+    tables.makeTable(3, 1, '3315px', '270px', false, 's', games)
+    tables.addColumn(1, 1, 'h', games)
+    tables.addTableHeader(1, header1)
+    tables.changeRowColor('#828E84', 1, 0)
+}
+
+
+examples();

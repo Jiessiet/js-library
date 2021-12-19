@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>TableViews</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <h1 class="logo"><a href="#">TableViews Library</a></h1>
+        <ul>
+          <li><a href="./index.html" class="current">Overview and Examples</a></li>
+          <li><a href="./documentation.html">Documentation</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="header">
+      <div class="container">
+        <h1>Introducing TableViews - a Javascript Library</h1>
+        <p>
+          TableViews allows developers to easily create tables or grids to personalize their website.
+          <br> Users can resize and move the tables around, give input and have an organized way of viewing data</br>
+          <br> TableViews includes cell manipulation, changing colors, user rating, input, quizzes, selection and much more! </br>
+          <br></br>
+        </p>
+
+        <div class = "container">
+          <a href="https://storyset.com/finance/">Images are illustrations by Storyset</a>
+        </div>
+      </div>
+    </div>
+    <section class="container content">
+      <h3>Creating Cells - Code below</h3>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <p>
+        Quiz Cells: Quizzes are made with quiz cells that have a programmed truth value. Try clicking the choices!
+      </p>
+      <pre>
+      <code>
+          const cells = new TableCellGenerator()
+          cells.makeHeaderCell('300px', '80px', '1000px', '790px', 'Which Number is Even? Click on the answer!')
+          cells.makeQuizCells('300px', '80px', '1050px', '400px', 'The number 212 is even', true, false)
+          cells.makeQuizCells('300px', '80px', '1050px', '800px', 'The number 493 is even', false, false)
+          cells.makeQuizCells('300px', '80px', '1050px', '1200px', 'The number 105', false, false)
+      </code>
+    </pre>
+
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <p>
+        Moveable cells: Hover over the cells, click and move the cells around. 
+      </p>
+      <pre>
+      <code>
+          const cells = new TableCellGenerator()
+          cells.makeHeaderCell('300px', '90px', '1460px', '800px', 'Compare shapes to: ▭! Hint: Try moving the cells closer to compare.')
+          cells.makeCell('60px', '60px', '1550px', '400px', "▱", true)
+          cells.makeCell('60px', '60px', '1550px', '800px', "▢",true)
+          cells.makeCell('60px', '60px', '1550px', '600px', "▯",true)
+          cells.makeCell('60px', '60px', '1550px', '1400px', "▮", true)
+          cells.makeCell('60px', '60px', '1550px', '1000px', "▬",true)
+          cells.makeCell('60px', '60px', '1550px', '1200px', "▭",true)
+
+          cells.changeCellsColor('pink', 5)
+          cells.changeCellsColor('pink', 6)
+          cells.changeCellsColor('pink', 7)
+          cells.changeCellsColor('pink', 8)
+          cells.changeCellsColor('pink', 9)
+          cells.changeCellsColor('lightgreen', 10)
+      </code>
+    </pre>
+
+      <h3>Creating Tables - Code Below</h3>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <p>
+        User Input Tables: Users can submit text, such as reviews for a certain product. Tables can be moved around and resized to fit the user's screen.
+      </p>
+      <pre>
+      <code>
+          const tables = new TableGenerator()
+
+          tables.setSizeTheme('1200', '300', false)
+
+          const array = ["Products", "Review"];
+
+          const products = [['Four Leaf Clover Necklace', 'Pufferfish Necklace'], 
+          ['Four Leaf Clover Earring', 'Pufferfish Earring'], 
+          ['Four Leaf Clover Braclet', 'Pufferfish Bracelet']]
+
+          tables.makeTable(3, 2, '2315px', '270px', true, 't', products)
+          tables.addColumn(0, 2, 'i', array)
+          tables.removeTableColumn(0, 1)
+          tables.changeColumnColor('lightgreen', 0, 0)
+          tables.addTableHeader(0, array)
+          
+      </code>
+    </pre>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+      <p>
+        User Rating Table: Users can make selections and leave a rating out of three hearts.
+      </p>
+
+      <pre>
+        <code>
+          const cells = new TableCellGenerator()
+          const tables = new TableGenerator()
+
+          const games = [[['Mario Party', 'Mario Kart', 'Super Mario']],
+          [['Minecraft', 'Stardew Valley', 'Animal Crossing']],
+          [['Red Dead Redemption', 'GTA V', 'Apex Legends']],]
+
+          const header1 = ["Games", "Rating"];
+
+          cells.makeHeaderCell('300px', '90px', '3200px', '700px', 'Select your favourite games on the left and leave a rating for each!')
+          tables.makeTable(3, 1, '3315px', '270px', false, 's', games)
+          tables.addColumn(1, 1, 'h', games)
+          tables.addTableHeader(1, header1)
+          tables.changeRowColor('#828E84', 1, 0)
+        </code>
+      </pre>
+    </section>
+
+    <section class="container">
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer type="text/javascript" src='tableViews.js'></script>
+    <script defer type="text/javascript" src='examples.js'></script>
+
+    </section>
+
+  </body>
+</html>

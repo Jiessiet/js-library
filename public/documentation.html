@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>TableViews Documentation</title>
+  </head>
+  <body>
+    <nav class="nav">
+        <div class="container">
+          <h1 class="logo"><a href="#">TableViews Library</a></h1>
+          <ul>
+            <li><a href="./index.html">Overview and Examples</a></li>
+            <li><a href="./documentation.html" class="current">Documentation</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section class="box content">
+
+        <h1>
+        <br></br>
+        Getting Started
+        </h1>
+        <p>
+            TableViews library generates tables and individual cells that developers can move to act like tables.
+            Cells can act as textboxes, where developers can input bodies of text to display to users.
+            Cells can also act as quizzes, where each cell is assigned a true or false value. 
+            Each cell can also be an input field, where developers can receive user input.
+            There are also rating cells (users can submit up to five hearts) and selection cells (users can select one choice to be submitted). 
+            Cells are completely customizable by developers, and developers can exercise their creative freedom by setting the position, 
+            height and size of cells and tables to suit their website needs. 
+            When working with tables, first set the width and length, as well as choose the cell theme.
+            Developers only need to input the number of rows and columns, along with the position of the table and the library will generate a table 
+            contained within the allocated space. 
+            Each cell within the table is customizable in its color, inner text and type (text, input, quiz, rating, selection). 
+            Developers only need to specify the row, column, table and change for the cell to be edited. 
+            
+            <br></br>
+
+            To get started, call the scripts below in your code;
+        </p>
+        <pre>
+            <code>
+                &ltscript defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt &lt/script&gt
+                &ltscript defer type="text/javascript" src='tableViews.js'&gt &lt/script&gt
+                &ltscript defer type="text/javascript" src='your-js-file.js'&gt &lt/script&gt
+            </code>
+        </pre>
+
+        <p>
+            A code snippet of a basic cell and table are shown below;
+        </p>
+        <pre>
+            <code>
+                const cells = new TableCellGenerator()  //making cells
+                const tables = new TableGenerator()     //making tables
+
+                const texts = [['Cell0', 'Cell1'], ['Cell2', 'Cell3'], ['Cell4', 'Cell5']]  //these will be what the cells in the table displays
+                cells.makeCell('300px', '80px', '100px', '100px', 'TableViews', false)  // a cell has been created with the word TableViews. 
+                                                                                        //To make the TableViews cell draggable, change false to true
+                
+                tables.setSizeTheme('500', '300', false)   //this sets the sizing theme of tables. To change to a table with small cells, change false to true.
+                tables.makeTable(3, 2, '300px', '100px', true, 't', texts)  //this makes a table with the texts array displayed in each cell. 
+                //To change the type of the cell, change 't' to another one below;
+
+                //S - selection
+                //I - input
+                //B - quiz
+                //H - rating
+            </code>
+        </pre>
+        <p>
+            See the API section below for a in-depth explaination of the library and customizations avaliable.
+        </p>
+
+        <h1>API</h1>
+
+        <p>
+            To create cell and table objects, first call the respective generators, shown below;
+        </p>
+        <pre>
+            <code>
+                const cells = new TableCellGenerator()  //making cells
+                const tables = new TableGenerator()     //making tables
+            </code>
+        </pre>
+
+        <p>
+            To make a table or cell, call the makeTable or makeCell function, shown below;
+        </p>
+        <pre>
+            <code>
+                cells.makeCell(cell_width, cell_height, cell_margin_top, cell_margin_left, optional_cell_inner_text, isDraggable)
+                
+                tables.setSizeTheme(table_width, table_height, haveSmallCells) //remember to set the sizing theme of the tables
+                tables.makeTable(row_number, column_number, margin_top, margin_left, isDraggable, cell_type, cell_inner_texts array)
+            </code>
+        </pre>
+        <p>
+            Just replace each of the variable calls in the method calls (like cell_width) and the tables will be added to your website! Note: all cell and table number starts from 0.
+        </p>
+
+        <h3>Cells</h3>
+        <p>
+            By calling TableCellGenerator, many cells can be generated. Every TableCellGenerator object will contain a list of cells that it has generated.
+            Developers can access styling and customization of these cells by keeping track of the the number in which they were generated and then calling 
+            the necessary methods. 
+            <br></br> 
+            In each method of creating cells, the methods takes in;
+            <br></br> 
+            width, type String, which is the width of the cell in px.<br></br> 
+            height, type String, which is the height of the cell in px.<br></br> 
+            top, type String, which is the margin-top of the cell in px.<br></br> 
+            left, type String, which is the margin-left of the cell in px.<br></br> 
+            drag, type boolean, which will be elaborated more in the Customization section. <br></br> <br></br> 
+            Users will see all the cells that each TableCellGenerator creates. Below are the six different types of cells that developers can choose from;
+            <br></br> 
+            Selection Cells: Created by the method makeSelectionCells(width, height, top, left, array, draggable). The array a list of strings that sets
+            the list of options that 
+            users will be able to select from. Users will be able to click the cell and a drop-down will show the user all the different avaliable selections.
+            <br></br> 
+            Quiz Cells: Created by the method makeQuizCells(width, height, top, left, text, value). Text (type String) is the text that the quiz button will display. 
+            Value is the truth value of the button (type boolean), which will display the result to the user accordingly. 
+            <br></br> 
+            Header Cells: Created by makeHeaderCell(width, height, top, left, words). Words (type String) are the text that are displayed in the cell.
+            <br></br> 
+            User Input Cells: Created by addUserInput(width, height, top, left, drag). This creates a form where users can type in. By clicking the attached submit button, 
+            users will be able to send their response to the developer. Currently, user input is displayed in the console. 
+            <br></br> 
+            Text Cells: Created by makeCell(width, height, top, left, words, drag). Words (type String) are the text that are displayed in the cell. This is different from header cells as 
+            header cells cannot be dragged. The displayed words are also different visually. Developers can pick the style that best suits their needs. 
+            <br></br> 
+            Rating Cells: Created by makeHeartsCell(width, height, top, left, drag). Three hearts are displayed in a cell, so users can give a rating out of three. 
+            To send a rating, users can click the empty hearts and watch it change color to confirm their selection. Each heart has a rating value, which is returned and 
+            can then be viewed by the developer. Currently the rating will be outputted in the console. 
+            <br></br> 
+        </p>
+
+        <h3>Tables</h3>
+        <p>
+            Developers can put each of the six types of cells into a table for further usability. Tables are made from calling the TableGenerator() method to create a tables object. 
+            (seen in the introductory code). The TableGenerator object will hold a list of tables, which the developer can keep track of to customize (more in the Customization section).
+            Developers also need the table number in relation to the object (as in the first table the TableGenerator object created, the second and so on) to edit the table.
+            To make a table, developers must set the sizing theme of the inside cells first.
+            This is done by calling the setSizeTheme(...) method, which will be elaborted upon in the Customization section. After setting the cells theme of the table, developers
+            can create a table by calling the makeTable(...) method multiple times to create tables with the same cell sizing theme. 
+            Developers can edit already created tables by adding and deleting rows and columns, and adding header rows. 
+            <br></br> 
+            Below are the value types of each of the varables used in table manipulation methods and their explaination;
+            <br></br> 
+            row_number: Type int. This is the row number of a table. Each table has an array of rows that contain cells, which start numbering at 0.
+            <br></br> 
+            column_number: Type int. This is the column number of a table. Similarily, the column number starts at 0 for each table.
+            <br></br> 
+            number_of_rows: Type int. This is the number of rows desired when creating a table. This number is always greater than 0.
+            <br></br> 
+            number_of_columns: Type int. This is the number of columns desired when creating a table. This number is always greater than 0.
+            <br></br> 
+            top: Type String. This is the margin-top of the table.
+            <br></br> 
+            left: Type String. This is the margin-left of the table.
+            <br></br> 
+            drag: Type boolean. Allow the user to drag the table. For further explaination, see Customization section.
+            <br></br> 
+            type: Type String. To set the types of cells in a table, developers must pass a string (case is irrelevant) that corresponds to a cell type.
+            <br></br>
+            S for selection, I for user input, B for quiz, H for rating and T for text. Headers are created seperately. 
+            <br></br> 
+            option1: Type array. This is an array of the associated arguments for the cell types. It should be an array corresponding to the third last argument
+            in the method calls to make individual cells. The values should be written in the format of the rowxcolumn. 
+            <br></br> 
+            option2: Type array. This is an array of boolean values and should only be used when making a table, column and/or row of quiz cells. The values should be written in the format of the rowxcolumn. 
+            <br></br> 
+            table: Type int. This is the table number, found by the order of tables created by TableGenerator object. 
+            
+            <br></br> 
+            Below are the methods and explainations for table creating and editing;
+            <br></br> 
+            makeTable(number_of_row, number_of_column, top, left, drag, type, option1, option2): This method creates a table that is added to the TableGenerator tables list.
+            <br></br> 
+            addTableRow(table, row_number, type, option1, option2): This method adds a row to the table. row_number refers to the position in the table that the developer wishes for the 
+            new row to take. 
+            <br></br> 
+            addColumn(table, column_number, type, option1, option2): This method adds a column to the table. column_number refers to the position in the table that the developer
+            wishes for the new column to take.
+            <br></br> 
+            removeTableRow(table, row_number): This method removes a row from the table. row_number refers to the row number that the developer wishes to remove. 
+            <br></br> 
+            removeTableColumn(table, column_number): This method removes a column from the table. column_number refers to the column number that the developer wishes to remove.
+            <br></br> 
+            addTableHeaderfunction(table, type): The method adds a header that is sticky to the top of the table. This will be the first row, ie. row number 0. If the deverloper
+            wishes to have the table seperated by sections, simply add another row to position 0. 
+            <br></br> 
+
+        </p>
+
+        <h3>Customization: Methods and Variables</h3>
+        <p>
+            drag: Type boolean   
+            <br></br> 
+            Introduced in the Cells section, by sending a truth value as an argument at the end of creating cells or tables will allow users 
+            to interact with the object by clicking on it and moving it around the page. This would be useful 
+            if a table or is needed at multiple points in the page. Developers can set the value to true, allowing users to interact, 
+            or false to prevent them from interacting. Header and Quiz cells will always be undraggable.
+            <br></br>
+            The default value is false. This value does not apply to the cells within a table, only on the table itself or cells outside of tables.
+            <br></br>
+            setSizeTheme(width, height, haveSmallCells):
+            <br></br> 
+            Shown in the beginning code snippet, developers can set the size of the table by calling the setSizeTheme() method. This only works with a table generator. 
+            The arguments includes the desired table width (type int), height (type int), and if the table has comparably small cells or not (type boolean. 
+            If the developer wishes for the small cells theme, they can set the value as true, and false to use the large cells theme. 
+            <br></br>
+            Without calling setSizeTheme, no sizing will be used on the table, and the size will be to fit based on the inner cells and their text size. 
+            This value does not apply to the cells within a table, only on the table itself.
+            <br></br>
+            changeColor(...):
+            <br></br> 
+            Developers can change the color of entire tables, individual rows, columns and individual cells (within and outside of tables). 
+            The methods are explained below;
+            <br></br> 
+            cells.changeCellsColor(color, cell): this method takes in the color (type String) to change to and the cell number (type int) according to the TableCellGenerator object.  
+            <br></br> 
+            tables.changeTableColor(color, table): this method takes in the color (type String) to change to and the table number (type int) according to the TableGenerator object.
+            <br></br> 
+            tables.changeRowColor(color, table, row): besides the color (type String) and table number, this method takes in the row number (type int) of the selected table. 
+            <br></br> 
+            tables.changeColumnColor(color, table, column): besides the color (type String) and table number (type int), this method also takes in the column number (type int) of the selected table.
+            <br></br> 
+            tables.changeTableCellColor(color, table, row, column): this table takes in the desired color (type String), table number (type int), the row and column number (type int) of the table to get the specified cell.
+            <br></br>
+            Github: https://github.com/csc309-fall-2021/js-library-tiechu
+        </p>
+
+    </section>
+  </body>
