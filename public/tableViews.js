@@ -1,6 +1,6 @@
 "use strict";
 
-(function(global, document, $) { 
+(function(global, document, $) {    //jQuery call
 
 function TableCellGenerator(){
     this.cells = []
@@ -27,8 +27,8 @@ let isDown = false;
 function _draggable(cell_id){
     const cell = document.getElementById(cell_id)   
     cell.addEventListener('mouseover', function(e){
-        $(document).ready()
-        $('div#'+cell.id).css('cursor', 'move');
+        $(document).ready()     //jQuery call
+        $('div#'+cell.id).css('cursor', 'move');    //jQuery call
     }) 
     cell.addEventListener('mousedown', function(e) {
 
@@ -82,7 +82,7 @@ TableCellGenerator.prototype = {
         const cell = document.createElement('div')
         cell.id = cellNumber+'C'
         cellNumber++
-        const body = $('body')
+        const body = $('body')  //jQuery call
         cell.style = `
             border-radius: 15px; 
             border: 1px solid black; 
@@ -163,7 +163,7 @@ TableCellGenerator.prototype = {
         form.appendChild(input)
         form.appendChild(submit)
 
-        const body = $('body')
+        const body = $('body')  //jQuery call
         body.append(form)
 		this.cells.push(form)
         if(drag){
@@ -194,7 +194,7 @@ TableCellGenerator.prototype = {
         // cell.style.textIndent = '35px'
         cell.innerHTML = typeof words !== 'undefined' ? words : ''
 
-        const body = $('body')
+        const body = $('body')  //jQuery call
         body.append(cell)
 		
 		this.cells.push(cell)
@@ -229,7 +229,7 @@ TableCellGenerator.prototype = {
             }
         }
 
-        const body = $('body')
+        const body = $('body')  //jQuery call
 		body.append(button)
 		
 		this.cells.push(button)
@@ -253,7 +253,7 @@ TableCellGenerator.prototype = {
         cell.style.overflow = "auto"
         cell.style.textAlign = 'center'
 
-        const body = $('body')
+        const body = $('body')  //jQuery call
         body.append(cell);
 
         for (let i of array) {
@@ -272,7 +272,7 @@ TableCellGenerator.prototype = {
         cell.id = heartNum+'H'
         heartNum++
 
-        const body = $('body')
+        const body = $('body')  //jQuery call
         cell.style = `
         border-radius: 15px; 
         box-sizing: border-box; 
@@ -339,16 +339,16 @@ TableCellGenerator.prototype = {
         })
 
         h1.addEventListener('mouseover', function(){
-            $(document).ready()
-            $('div#'+h1.id).css('cursor', 'pointer');
+            $(document).ready() //jQuery call
+            $('div#'+h1.id).css('cursor', 'pointer');//jQuery call
         })
         h2.addEventListener('mouseover', function(){
-            $(document).ready()
-            $('div#'+h2.id).css('cursor', 'pointer');
+            $(document).ready() //jQuery call
+            $('div#'+h2.id).css('cursor', 'pointer');   //jQuery call
         })
         h3.addEventListener('mouseover', function(){
-            $(document).ready()
-            $('div#'+h3.id).css('cursor', 'pointer');
+            $(document).ready() //jQuery call
+            $('div#'+h3.id).css('cursor', 'pointer');   //jQuery call
         })
 
         cell.appendChild(h1)
@@ -477,7 +477,7 @@ TableGenerator.prototype = {
         this.tables.push(temprows.flat())
         largetables.push(cell)
 
-        const body = $('body')
+        const body = $('body')  //jQuery call
         body.append(cell)
 
         const columns = []
@@ -640,4 +640,4 @@ TableGenerator.prototype = {
 }
 global.TableGenerator = global.TableGenerator || TableGenerator
 
-})(window, window.document, $);
+})(window, window.document, $);     //jQuery call
