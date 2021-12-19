@@ -17,9 +17,9 @@ function examples() {
     const header1 = ["Games", "Rating"];
 
     cells.makeHeaderCell('300px', '80px', '1000px', '790px', 'Which Number is Even? Click on the answer!')
-    cells.makeQuizCells('300px', '80px', '1050px', '400px', 'The number 212 is even', true, false)
-    cells.makeQuizCells('300px', '80px', '1050px', '800px', 'The number 493 is even', false, false)
-    cells.makeQuizCells('300px', '80px', '1050px', '1200px', 'The number 105', false, false)
+    cells.makeQuizCells('300px', '80px', '1050px', '400px', '12 is even', true, false)
+    cells.makeQuizCells('300px', '80px', '1050px', '800px', '93 is even', false, false)
+    cells.makeQuizCells('300px', '80px', '1050px', '1200px', '5 is even', false, false)
 
     cells.makeHeaderCell('300px', '90px', '1460px', '800px', 'Compare shapes to: ▭! Hint: Try moving the cells closer to compare.')
     cells.makeCell('60px', '60px', '1550px', '400px', "▱", true)
