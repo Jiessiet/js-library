@@ -49,8 +49,8 @@ Links
 </h2>
 <p>
            See the Link below for a in-depth explaination of the library and customizations avaliable.
-           Landing Page Link:
-           Documentation Link:
+           Landing Page Link: https://blooming-inlet-02629.herokuapp.com
+           Documentation Link: https://blooming-inlet-02629.herokuapp.com/documentation.html
             
 </p>
             
