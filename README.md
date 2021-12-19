@@ -1,8 +1,7 @@
 <h1>
-        <br></br>
-        Getting Started
-        </h1>
-        <p>
+Getting Started
+</h1>
+<p>
             TableViews library generates tables and individual cells that developers can move to act like tables.
             Cells can act as textboxes, where developers can input bodies of text to display to users.
             Cells can also act as quizzes, where each cell is assigned a true or false value. 
@@ -21,7 +20,6 @@
                 <script defer type="text/javascript" src='tableViews.js'> </script>
                 <script defer type="text/javascript" src='your-js-file.js'> </script>
 <h2>
-<br></br>
 Code Snippet
 </h2>
 <p>
@@ -48,9 +46,10 @@ Code Snippet
 Links
 </h2>
 <p>
-           See the Link below for a in-depth explaination of the library and customizations avaliable.
-           Landing Page Link: https://blooming-inlet-02629.herokuapp.com
-           Documentation Link: https://blooming-inlet-02629.herokuapp.com/documentation.html
+See the Link below for a in-depth explaination of the library and customizations avaliable.
+Landing Page Link: https://blooming-inlet-02629.herokuapp.com
+        <br></br>
+Documentation Link: https://blooming-inlet-02629.herokuapp.com/documentation.html
             
 </p>
             
